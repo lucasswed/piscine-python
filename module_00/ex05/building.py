@@ -84,7 +84,9 @@ def main():
             "Error! Too much arguments.\nCorrect usage: python building.py arg"
         )
     if len(sys.argv) == 1 or not sys.argv[1]:
-        phrase = input("Please insert a string to be analyzed: ")
+        phrase = ""
+        while not phrase:
+            phrase = input("What is the text to count?\n")
     else:
         phrase = sys.argv[1]
     print(f"The text contains {len(phrase)} characters:")
